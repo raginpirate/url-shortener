@@ -1,0 +1,12 @@
+<h1 class="title">Trending links</h1>
+<div class="row">
+  <% @top_links.each do |link| %>
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 link">
+      <p class="short_url"><%= link_to link.display_slug, link.slug, target: '_blank', style: 'color:#0099cc;'%></p>
+      <p class="route_text">routes to: <%= link_to truncate(link.given_url, length: 35), link.given_url, style: 'color:#009999;'%></p>
+      <p class="click_text"><%= pluralize(link.clicks, 'click') %>, <span class="time">created <%= time_ago_in_words(link.created_at) %> ago</span></p>
+    </div>
+  <% end %>
+</div>
+
+<p class="bottom_nav"><%= link_to 'See all of the links', '/all' %></p>
