@@ -1,6 +1,8 @@
 class LinksController < ApplicationController
   before_action :set_link, only: [:show]
-
+  rescue_from NoMethodError, with: :invalid_link
+  rescue_from ActiveRecord::RecordNotFound, with: :invalid_link
+  
   def index
     @links = Link.all
   end
@@ -22,6 +24,7 @@ class LinksController < ApplicationController
 
     respond_to do |format|
       if @link.save
+        logger.debug "Got here"
         format.html { redirect_to root_path, notice: 'Link was successfully created.' }
         format.js
         format.json { render action: 'show', status: :created, location: @link }
@@ -39,5 +42,10 @@ class LinksController < ApplicationController
 
     def link_params
       params.require(:link).permit(:given_url)
+    end
+
+    def invalid_link
+      logger.error "Attempt to access invalid link"
+      redirect_to root_path, notice: 'Invalid URL: This Link No Longer Exists or Never Did.'
     end
 end

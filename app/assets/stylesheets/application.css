@@ -14,13 +14,36 @@
  */
 form {
   text-align: center;
-  margin-top:100px;
+  margin-top:50px;
   margin-bottom:100px;
 }
 
 form div {
   display: inline-block;
   vertical-align: middle;
+}
+
+#notice {
+  margin-top: 25px;
+  text-align: center;
+  color: #ff0000;
+  position: sticky;
+  min-height: 50px;
+}
+
+#result {
+  margin-top: 25px;
+  text-align: center;
+  color: #ff0000;
+  min-height: 50px;
+}
+
+span.route_text_route {
+  color: #394d00;
+}
+
+td.route_text_route {
+  color: #739900;
 }
 
 p.bottom_nav {
@@ -37,8 +60,6 @@ p.short_url {
 p.route_text {
   text-align: center;
   font-size: 10px;
-  padding-left: 20px;
-  padding-right: 20px;
   margin: 0px;
 }
 
@@ -46,6 +67,11 @@ p.click_text {
   text-align: center;
   font-size: 12px;
   margin-bottom: 50px;
+}
+
+p.trending_link {
+  text-align: center;
+  margin: 5px;
 }
 
 h1.title {

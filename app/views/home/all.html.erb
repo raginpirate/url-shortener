@@ -1,10 +1,10 @@
+<h1 class="title">All Links</h1>
 <div class="table-responsive">
   <table class="table">
     <thead>
       <tr>
         <th>Given url</th>
         <th>Short Link</th>
-        <th>Title</th>
         <th>Clicks</th>
         <th></th>
         <th></th>
@@ -14,9 +14,8 @@
     <tbody>
       <% @links.each do |link| %>
         <tr>
-          <td><%= link.given_url %></td>
+          <td><span class="route_text_route"><%= truncate(link.given_url, length: 60) %></span></td>
           <td><%= link_to link.display_slug, link.slug, target: '_blank' %></td>
-          <td><%= link.title %></td>
           <td><%= link.clicks %></td>
           <td><%= link_to 'Show', link %></td>
         </tr>
@@ -29,4 +28,4 @@
 
 <%= will_paginate @links %>
 
-<p class="bottom_nav"><%= link_to 'See just the trending links', root_path %></p>
+<p class="trending_link"><%= link_to 'See just the trending links', root_path %></p>
