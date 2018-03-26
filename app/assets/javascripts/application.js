@@ -13,9 +13,12 @@
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
+//= require jquery
+//= require jquery_ujs
 //= require bootstrap.min
 //= require jquery.validate
 //= require jquery.validate.additional-methods
+
 $.validator.addMethod(
         "regex",
         function(value, element, regexp) {
@@ -37,6 +40,7 @@ $('#new_link').ready(function() {
       'link[given_url]': {
         required: 'Please put in a URL',
       }
-    }
+    },
+    errorLabelContainer: '.errors'
   });
 });

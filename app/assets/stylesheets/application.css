@@ -15,12 +15,17 @@
 form {
   text-align: center;
   margin-top:50px;
-  margin-bottom:100px;
+  margin-bottom:10px;
 }
 
-form div {
+form div.inputs {
   display: inline-block;
   vertical-align: middle;
+}
+
+form div.errdiv {
+  min-height: 35px;
+  height: auto;
 }
 
 #notice {
@@ -31,11 +36,16 @@ form div {
   min-height: 50px;
 }
 
-#result {
+.result {
   margin-top: 25px;
   text-align: center;
   color: #ff0000;
-  min-height: 50px;
+  min-height: 100px;
+}
+
+.errors {
+  text-align: center;
+  color: #ff0000;
 }
 
 span.route_text_route {
@@ -52,7 +62,7 @@ p.bottom_nav {
 
 p.short_url {
   text-align: center;
-  color:#0099cc;
+  color: #2db300;
   font-size: 20px;
   margin: 0px;
 }
@@ -80,8 +90,10 @@ h1.title {
 }
 
 footer.finalize {
-  position:relative;
-  margin-top:16%;
+  margin-top:4%;
   margin-left:30px;
   margin-bottom:30px;
+  font-size: 12px;
+  bottom:0;
+  right:0;
 }

@@ -11,10 +11,13 @@
     </div>
   <% end %>
   <h1 class="title">URL-Shortener</h1>
-  <div>
+  <div class="inputs">
     <%= f.text_field :given_url, :class => "form-control", :placeholder => "Paste a link to shorten" %>
   </div>
-  <div>
+  <div class="inputs">
     <%= f.submit 'Shorten Me', :class => "btn btn-primary"%>
+  </div>
+  <div class="errdiv">
+    <div class="errors"></div>
   </div>
 <% end %>

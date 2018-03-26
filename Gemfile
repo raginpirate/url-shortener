@@ -36,6 +36,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'figaro', '~> 1.1.1'
 gem 'will_paginate', '~> 3.1.6'
 gem 'jquery-validation-rails', '~> 1.16.0'
+gem 'jquery-rails', '~> 4.3.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
