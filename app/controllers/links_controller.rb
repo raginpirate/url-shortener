@@ -1,5 +1,6 @@
 class LinksController < ApplicationController
   before_action :set_link, only: [:show]
+  after_action :set_session, only: [:create]
   rescue_from NoMethodError, with: :invalid_link
   rescue_from ActiveRecord::RecordNotFound, with: :invalid_link
   
@@ -15,8 +16,13 @@ class LinksController < ApplicationController
         @link.save
       end
     else
-      @link = Link.find(params[:id])
+      @link = Link.new
+      @linkPrev = Link.find(params[:id])
     end
+  end
+
+  def update
+    create
   end
 
   def create
@@ -48,4 +54,9 @@ class LinksController < ApplicationController
       logger.error "Attempt to access invalid link"
       redirect_to root_path, notice: 'Invalid URL: This Link No Longer Exists or Never Did.'
     end
+
+    def set_session
+      session[:link_html] = "<p class='short_url'>Your Shortened URL: <a target='_blank' style='color:#0099cc;' href='#{@link.slug}'>#{@link.display_slug}</a></p>"
+    end
+
 end

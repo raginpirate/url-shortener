@@ -1,4 +1,9 @@
-<p class="short_url"><%= link_to @link.display_slug, @link.display_slug, target: '_blank', style: 'color:#0099cc;'%></p>
-<p class="route_text">routes to: <span class="route_text_route"><%= @link.given_url%></span></p>
-<p class="click_text"><%= pluralize(@link.clicks, 'click') %>, <span class="time">created <%= time_ago_in_words(@link.created_at) %> ago</span></p>
+<p class="short_url_large"><%= link_to @linkPrev.display_slug, @linkPrev.display_slug, target: '_blank', style: 'color:#0099cc;'%></p>
+<p class="route_text_large">routes to:</p>
+<p class="route_text_large"> 
+	<div style="margin: auto; overflow-x: auto; overflow-y: disabled; width: 400px; white-space: nowrap; text-align: center;">
+		<%= @linkPrev.given_url%>	
+	</div> 
+</p>
+<p class="click_text_large"><%= pluralize(@linkPrev.clicks, 'click') %>, <span class="time">created <%= time_ago_in_words(@linkPrev.created_at) %> ago</span></p>
 <h2 style='text-align: center;'><%= link_to 'Return', '/all'%></h2>

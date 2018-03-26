@@ -11,7 +11,6 @@
 // about supported directives.
 //
 //= require rails-ujs
-//= require turbolinks
 //= require_tree .
 //= require jquery
 //= require jquery_ujs
@@ -28,12 +27,12 @@ $.validator.addMethod(
         "Please Enter a Valid URL (http://...)"
 );
 
-$('#new_link').ready(function() {
+$('new_link').ready(function() {
   var password_validator = $('#new_link').validate({
     rules: {
       'link[given_url]': {
         required: true,
-        regex: "^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}"
+        regex: "^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}",
       },
     },
     messages: {
