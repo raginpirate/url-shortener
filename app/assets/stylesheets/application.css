@@ -24,6 +24,7 @@ form div.inputs {
 }
 
 form div.errdiv {
+  margin-top:5px;
   min-height: 35px;
   height: auto;
 }
@@ -58,6 +59,7 @@ td.route_text_route {
 
 p.bottom_nav {
   text-align: center;
+  margin-bottom: 50px;
 }
 
 p.short_url {
@@ -82,6 +84,7 @@ p.click_text {
 p.trending_link {
   text-align: center;
   margin: 5px;
+  margin-bottom: 49px;
 }
 
 h1.title {
@@ -90,10 +93,7 @@ h1.title {
 }
 
 footer.finalize {
-  margin-top:4%;
-  margin-left:30px;
-  margin-bottom:30px;
+  text-align: left;
   font-size: 12px;
-  bottom:0;
-  right:0;
+  margin: 30px;
 }

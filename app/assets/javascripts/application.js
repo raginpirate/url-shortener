@@ -25,7 +25,7 @@ $.validator.addMethod(
             var re = new RegExp(regexp);
             return this.optional(element) || re.test(value);
         },
-        "Please enter a valid URL (using http)"
+        "Please Enter a Valid URL (http://...)"
 );
 
 $('#new_link').ready(function() {
@@ -38,7 +38,7 @@ $('#new_link').ready(function() {
     },
     messages: {
       'link[given_url]': {
-        required: 'Please put in a URL',
+        required: 'Please Enter a URL',
       }
     },
     errorLabelContainer: '.errors'
