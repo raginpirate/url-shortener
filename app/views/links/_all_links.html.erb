@@ -1,0 +1,6 @@
+<tr>
+  <td><span class="route_text_route"><%= truncate(link.given_url, length: 60) %></span></td>
+  <td><%= link_to link.display_slug, link.slug, target: '_blank' %></td>
+  <td><%= link.clicks %></td>
+  <td><%= link_to 'Show', link_path(link.slug) %></td>
+</tr>
