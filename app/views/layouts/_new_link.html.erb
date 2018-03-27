@@ -1,6 +1,6 @@
 <%= render 'links/form' %>
 <hr></hr>
 <div class="result">
-	<%=raw session[:link_html] %>
+	<%= render :partial => 'links/sess' if session[:link_slug] %>
 </div>
 <hr></hr>

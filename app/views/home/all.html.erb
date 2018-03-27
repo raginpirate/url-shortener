@@ -17,7 +17,7 @@
           <td><span class="route_text_route"><%= truncate(link.given_url, length: 60) %></span></td>
           <td><%= link_to link.display_slug, link.slug, target: '_blank' %></td>
           <td><%= link.clicks %></td>
-          <td><%= link_to 'Show', link %></td>
+          <td><%= link_to 'Show', link_path(link.slug) %></td>
         </tr>
       <% end %>
     </tbody>
@@ -25,7 +25,8 @@
 </div>
 
 
-
-<%= will_paginate @links %>
+<div class="digg_pagination">
+  <%= will_paginate @links %>
+</div>
 
 <p class="trending_link"><%= link_to 'View Trending Links', root_path %></p>

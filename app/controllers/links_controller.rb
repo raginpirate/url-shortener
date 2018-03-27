@@ -1,5 +1,6 @@
 class LinksController < ApplicationController
   before_action :set_link, only: [:show]
+  #called after we set our session so our model can set our slug
   after_action :set_session, only: [:create]
   rescue_from NoMethodError, with: :invalid_link
   rescue_from ActiveRecord::RecordNotFound, with: :invalid_link
@@ -17,7 +18,7 @@ class LinksController < ApplicationController
       end
     else
       @link = Link.new
-      @linkPrev = Link.find(params[:id])
+      @linkPrev = Link.find_by(slug: params[:id])
     end
   end
 
@@ -56,7 +57,8 @@ class LinksController < ApplicationController
     end
 
     def set_session
-      session[:link_html] = "<p class='short_url'>Your Shortened URL: <a target='_blank' style='color:#0099cc;' href='#{@link.slug}'>#{@link.display_slug}</a></p>"
+      session[:link_slug] = @link.display_slug
+      session[:slug] = @link.slug
     end
 
 end
