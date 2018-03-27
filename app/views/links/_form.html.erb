@@ -1,5 +1,4 @@
-<p id="notice"><%= notice %></p>
-<%logger.debug "we ran this render"%>
+<p class="notice"><%= notice %></p>
 <%= form_for(@link, remote: true) do |f| %>
   <% if @link.errors.any? %>
     <div id="error_explanation">

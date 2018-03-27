@@ -33,9 +33,15 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# my own added gems:
+
+# used for keys
 gem 'figaro', '~> 1.1.1'
+# used for multiple page display of all links
 gem 'will_paginate', '~> 3.1.6'
+# used to validate url input
 gem 'jquery-validation-rails', '~> 1.16.0'
+# jquery
 gem 'jquery-rails', '~> 4.3.1'
 
 group :development, :test do

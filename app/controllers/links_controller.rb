@@ -9,27 +9,27 @@ class LinksController < ApplicationController
   # occurs if invalid slug
   rescue_from ActiveRecord::RecordNotFound, with: :invalid_link
 
-  # show, occurs when navagating to /slug or /links/slug
   def show
     if params[:slug]
-      set_link
+      @link = set_link(params[:slug])
       if redirect_to @link.given_url
         @link.clicks += 1
         @link.save
       end
     else
       @link = Link.new
-      @linkPrev = Link.find_by(slug: params[:id])
+      @linkPrev = set_link(params[:id])
     end
   end
 
   # adding a url while looking at link desc.
   # is not update, but instead create
+  # should we want to implement update,
+  # we can do params[] checks in this method
   def update
     create
   end
 
-  # called after successful validation from js
   def create
     @link = Link.new(link_params)
 
@@ -46,8 +46,9 @@ class LinksController < ApplicationController
   end
 
   private
-    def set_link
-      @link = Link.find_by(slug: params[:slug])
+    
+    def set_link(slug_val)
+      Link.find_by(slug: slug_val)
     end
 
     def link_params

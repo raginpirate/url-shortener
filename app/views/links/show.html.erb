@@ -1,9 +1,9 @@
 <p class="short_url_large"><%= link_to @linkPrev.display_slug, @linkPrev.display_slug, target: '_blank', style: 'color:#0099cc;'%></p>
 <p class="route_text_large">routes to:</p>
 <p class="route_text_large"> 
-	<div class="full_route">
-		<%= @linkPrev.given_url%>
-	</div> 
+  <div class="full_route">
+    <%= @linkPrev.given_url%>
+  </div> 
 </p>
 <p class="click_text_large"><%= pluralize(@linkPrev.clicks, 'click') %>, <span class="time">created <%= time_ago_in_words(@linkPrev.created_at) %> ago</span></p>
 <h2 style='text-align: center;'><%= link_to 'Home', root_path%></h2>

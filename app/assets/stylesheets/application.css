@@ -13,39 +13,39 @@
  *= require_tree .
  */
 
-#notice {
-  margin-top: 25px;
-  text-align: center;
-  color: #ff0000;
-  position: sticky;
-  min-height: 50px;
+.notice {
+    margin-top: 25px;
+    text-align: center;
+    color: #ff0000;
+    position: sticky;
+    min-height: 50px;
 }
 
 .errors {
-  text-align: center;
-  color: #ff0000;
+    text-align: center;
+    color: #ff0000;
 }
 
 .result {
-  text-align: center;
-  color: #ff0000;
-  min-height: 54px;
+    text-align: center;
+    color: #ff0000;
+    min-height: 54px;
 }
 
 p.short_url {
-  text-align: center;
-  color: #2db300;
-  font-size: 20px;
-  margin: 0px;
+    text-align: center;
+    color: #2db300;
+    font-size: 20px;
+    margin: 0px;
 }
 
 h1.title {
-  text-align: center;
-  margin-bottom: 30px;
+    text-align: center;
+    margin-bottom: 30px;
 }
 
 footer.finalize {
-  text-align: left;
-  font-size: 12px;
-  margin: 30px;
+    text-align: left;
+    font-size: 12px;
+    margin: 30px;
 }

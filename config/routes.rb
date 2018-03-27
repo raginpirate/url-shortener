@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  # enabled only /slug, /, and /links/slug
+  # all other urls direct to home#error
   get "home/index"
   get '/all' => 'home#all'
   get ':slug' => 'links#show'

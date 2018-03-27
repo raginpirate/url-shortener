@@ -1,6 +1,8 @@
 <%= render 'links/form' %>
 <hr></hr>
+<!-- result is modified via AJAX from our input form
+     we want it empty if we do not have a session -->
 <div class="result">
-	<%= render :partial => 'links/sess' if session[:link_slug] %>
+  <%= render :partial => 'links/sess' if session[:link_slug] %>
 </div>
 <hr></hr>
