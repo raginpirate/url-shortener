@@ -5,7 +5,7 @@ class Link < ApplicationRecord
   end
 
   def display_slug
-    "http://localhost:3000/" + self.slug
+    "https://boiling-dusk-22777.herokuapp.com/" + self.slug
   end
 
   after_create :generate_slug

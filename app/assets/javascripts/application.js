@@ -10,7 +10,6 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require turbolinks
 //= require rails-ujs
 //= require_tree .
 //= require jquery
@@ -32,21 +31,19 @@ $.validator.addMethod(
 )
 
 //enable reloading after a turbolinks jump
-$(document).on('turbolinks:load', function() {
-  $('new_link').ready(function() {
-    var password_validator = $('#new_link').validate({
-      rules: {
-        'link[given_url]': {
-          required: true,
-          regex: "^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}",
-        },
+$('new_link').ready(function() {
+  var password_validator = $('#new_link').validate({
+    rules: {
+      'link[given_url]': {
+        required: true,
+        regex: "^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}",
       },
-      messages: {
-        'link[given_url]': {
-          required: 'Please Enter a URL',
-        }
-      },
-      errorLabelContainer: '.errors'
-    });
-  })
+    },
+    messages: {
+      'link[given_url]': {
+        required: 'Please Enter a URL',
+      }
+    },
+    errorLabelContainer: '.errors'
+  });
 })
