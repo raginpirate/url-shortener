@@ -1,8 +1,8 @@
 <p class="short_url_large"><%= link_to @linkPrev.display_slug, @linkPrev.display_slug, target: '_blank', style: 'color:#0099cc;'%></p>
 <p class="route_text_large">routes to:</p>
 <p class="route_text_large"> 
-	<div style="margin: auto; overflow-x: auto; overflow-y: disabled; width: 400px; white-space: nowrap; text-align: center;">
-		<%= @linkPrev.given_url%>	
+	<div class="full_route">
+		<%= @linkPrev.given_url%>
 	</div> 
 </p>
 <p class="click_text_large"><%= pluralize(@linkPrev.clicks, 'click') %>, <span class="time">created <%= time_ago_in_words(@linkPrev.created_at) %> ago</span></p>

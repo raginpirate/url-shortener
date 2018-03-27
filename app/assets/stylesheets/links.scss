@@ -1,3 +1,45 @@
 // Place all the styles related to the links controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+form {
+  text-align: center;
+}
+
+form div.inputs {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+form div.errdiv {
+  margin-top:5px;
+  min-height: 35px;
+  height: auto;
+}
+
+p.short_url_large {
+  text-align: center;
+  color: #2db300;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+p.route_text_large {
+  text-align: center;
+  font-size: 20px;
+}
+
+p.click_text_large {
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 50px;
+}
+
+div.full_route {
+  margin: auto;
+  overflow-x: auto;
+  overflow-y: disabled;
+  width: 400px;
+  white-space: nowrap;
+  text-align: center;
+}

@@ -13,70 +13,6 @@
  *= require_tree .
  */
 
- .digg_pagination {
-  background: white;
-  cursor: default;
-  font-size: 12px;
-  /* self-clearing method: */ }
-  .digg_pagination a, .digg_pagination span, .digg_pagination em {
-    padding: 0.1em 0.25em;
-    display: block;
-    float: left;
-    margin-right: 1px; }
-  .digg_pagination .disabled {
-    color: #999999;
-    border: 1px solid #dddddd; }
-  .digg_pagination .current {
-    font-style: normal;
-    font-weight: bold;
-    background: #2e6ab1;
-    color: white;
-    border: 1px solid #2e6ab1; }
-  .digg_pagination a {
-    text-decoration: none;
-    color: #105cb6;
-    border: 1px solid #9aafe5; }
-    .digg_pagination a:hover, .digg_pagination a:focus {
-      color: #000033;
-      border-color: #000033; }
-  .digg_pagination .page_info {
-    background: #2e6ab1;
-    color: white;
-    padding: 0.4em 0.6em;
-    width: 22em;
-    margin-bottom: 0.3em;
-    text-align: center; }
-    .digg_pagination .page_info b {
-      color: #000033;
-      background: #6aa6ed;
-      padding: 0.1em 0.25em; }
-  .digg_pagination:after {
-    content: ".";
-    display: block;
-    height: 0;
-    clear: both;
-    visibility: hidden; }
-  * html .digg_pagination {
-    height: 1%; }
-  *:first-child + html .digg_pagination {
-    overflow: hidden; }
-
-
-form {
-  text-align: center;
-}
-
-form div.inputs {
-  display: inline-block;
-  vertical-align: middle;
-}
-
-form div.errdiv {
-  margin-top:5px;
-  min-height: 35px;
-  height: auto;
-}
-
 #notice {
   margin-top: 25px;
   text-align: center;
@@ -85,28 +21,15 @@ form div.errdiv {
   min-height: 50px;
 }
 
-.result {
-  text-align: center;
-  color: #ff0000;
-  min-height: 54px;
-}
-
 .errors {
   text-align: center;
   color: #ff0000;
 }
 
-span.route_text_route {
-  color: #394d00;
-}
-
-td.route_text_route {
-  color: #739900;
-}
-
-p.bottom_nav {
+.result {
   text-align: center;
-  margin-bottom: 50px;
+  color: #ff0000;
+  min-height: 54px;
 }
 
 p.short_url {
@@ -114,42 +37,6 @@ p.short_url {
   color: #2db300;
   font-size: 20px;
   margin: 0px;
-}
-
-p.short_url_large {
-  text-align: center;
-  color: #2db300;
-  font-size: 20px;
-  margin-bottom: 15px;
-}
-
-p.route_text {
-  text-align: center;
-  font-size: 10px;
-  margin: 0px;
-}
-
-p.click_text {
-  text-align: center;
-  font-size: 12px;
-  margin-bottom: 50px;
-}
-
-p.route_text_large {
-  text-align: center;
-  font-size: 20px;
-}
-
-p.click_text_large {
-  text-align: center;
-  font-size: 20px;
-  margin-bottom: 50px;
-}
-
-p.trending_link {
-  text-align: center;
-  margin: 5px;
-  margin-bottom: 51px;
 }
 
 h1.title {

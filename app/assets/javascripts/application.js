@@ -10,6 +10,7 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require turbolinks
 //= require rails-ujs
 //= require_tree .
 //= require jquery
@@ -18,6 +19,9 @@
 //= require jquery.validate
 //= require jquery.validate.additional-methods
 
+//jquery.validation for form submission with regex
+//source: http://andrewcallahan.github.io/blog/2014/02/26/make-your-own-url-shortener-with-rails-4-and-heroku/
+
 $.validator.addMethod(
         "regex",
         function(value, element, regexp) {
@@ -25,21 +29,24 @@ $.validator.addMethod(
             return this.optional(element) || re.test(value);
         },
         "Please Enter a Valid URL (http://...)"
-);
+)
 
-$('new_link').ready(function() {
-  var password_validator = $('#new_link').validate({
-    rules: {
-      'link[given_url]': {
-        required: true,
-        regex: "^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}",
+//enable reloading after a turbolinks jump
+$(document).on('turbolinks:load', function() {
+  $('new_link').ready(function() {
+    var password_validator = $('#new_link').validate({
+      rules: {
+        'link[given_url]': {
+          required: true,
+          regex: "^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}",
+        },
       },
-    },
-    messages: {
-      'link[given_url]': {
-        required: 'Please Enter a URL',
-      }
-    },
-    errorLabelContainer: '.errors'
-  });
-});
+      messages: {
+        'link[given_url]': {
+          required: 'Please Enter a URL',
+        }
+      },
+      errorLabelContainer: '.errors'
+    });
+  })
+})
